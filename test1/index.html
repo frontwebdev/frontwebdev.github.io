@@ -34,6 +34,9 @@
     document.addEventListener('pw:subscribe:allow', function(event) {
         console.log(event.detail);
     }, false);
+    document.addEventListener('pw:subscribe:allow-notify', function(event) {
+        console.log(event.detail);
+    }, false);
     document.addEventListener('pw:subscribe:deny', function(event) {
         console.log(event.detail);
     }, false);
