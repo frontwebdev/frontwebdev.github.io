@@ -1,9 +1,142 @@
-<!doctype html>
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 <head>
-</head>
-<body>
-<h2 >нужен займ? </h2>
+    <title>Strata by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><!--<script src="assets/js/ie/html5shiv.js"></script>--><![endif]-->
+    <!--<link rel="stylesheet" href="assets/css/main.css" />-->
+    <!--[if lte IE 8]><!--<link rel="stylesheet" href="assets/css/ie8.css" />--><![endif]-->
+    <!--<style>
+        .pw-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99999999999;
+            background: rgba(0,0,0,0.3);
+        }
+        .pw-overlay__inner {
+            position: relative;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            bottom: 0;
+            height: 100%;
+        }
 
-</body>
+        .pw-button-notify {
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 190px;
+            height: 50px;
+            margin: auto;
+            padding: 20px 30px;
+            text-decoration: none;
+            color: #000;
+            border-radius: 3px;
+            background: #fff;
+            z-index: 99999999;
+            font-size: 12px;
+            line-height: 1em;
+        }
+    </style>-->
+</head>
+<body id="top">
+
+<h2>Нужен займ</h2>
+
+    <button id="subscribe" type="button" name="button">subscribe</button>
+    <div class="">
+        <code id="info"></code>
+    </div>
+    <div class="">
+        <a target="_blank" href="https://safari.push.world/sert/">Сгенерировать package</a>
+    </div>
+    <div style="padding: 30px 0;">
+        <a href="https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/NotificationProgrammingGuideForWebsites/PushNotifications/PushNotifications.html#//apple_ref/doc/uid/TP40013225-CH3-SW12">apple documentation</a>
+    </div>
+
+		<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+   <!-- <script>!function(e,t,d,s,a,n,c){e[a]={},e[a].date=(new Date).getTime(),n=t.createElement(d),c=t.getElementsByTagName(d)[0],n.type="text/javascript",n.async=!0,n.src=s,c.parentNode.insertBefore(n,c)}(window,document,"script","https://alikeeperru.push.world/embed.js","pw"),pw.websiteId="e18de69a8840f83a9d7a33df0e15d3de841e0d24c75da0cf2194885c39640660";</script>-->
+
+    <!--<script>!function(e,t,d,s,a,n,c){e[a]={},e[a].date=(new Date).getTime(),n=t.createElement(d),c=t.getElementsByTagName(d)[0],n.type="text/javascript",n.async=!0,n.src=s,c.parentNode.insertBefore(n,c)}(window,document,"script","https://alikeeperru.dev.push.world/embed.js","pw"),pw.websiteId="e18de69a8840f83a9d7a33df0e15d3de841e0d24c75da0cf2194885c39640660";</script>-->
+
+    <script>!function(e,t,d,a,c,n,f){e[c]={},e[c].date=(new Date).getTime(),n=t.createElement(d),f=t.getElementsByTagName(d)[0],n.type="text/javascript",n.async=!0,n.src=a,f.parentNode.insertBefore(n,f)}(window,document,"script","https://landing.push-world.local/scheme/http/embed.js","pw"),pw.websiteId="9d28e1e6dd826d11f0854615022c8a5b4dab0ad0e7bc75ac6201d945894ba627";</script>
+
+
+
+
+
+		<script type="text/javascript">
+            var host = document.location.href
+                , pushId = 'web.world.push.test5'
+                , subscribe = document.querySelector('#subscribe');
+
+            subscribe.addEventListener('click', e => {
+                console.log(host, pushId);
+                pushNotification();
+            }, false);
+
+            var pushNotification = () => {
+                "use strict";
+
+                if ('safari' in window && 'pushNotification' in window.safari) {
+                    var permissionData = window.safari.pushNotification.permission(pushId);
+                    checkRemotePermission(permissionData);
+                } else {
+                    console.log('Push notifications not supported.');
+                }
+            };
+
+            var statusInfo = d => {
+                var info = document.querySelector('#info');
+                info.innerHTML = `Статус: ${d.permission} <br> Токен: ${d.deviceToken}`;
+            };
+
+            var checkRemotePermission = permissionData => {
+                "use strict";
+                statusInfo(permissionData);
+
+                switch (permissionData.permission) {
+                    case 'default':
+                        window.safari.pushNotification.requestPermission(
+                            'https://safari.push.world',
+                            pushId,
+                            {},
+                            checkRemotePermission
+                        );
+                        break;
+                    case 'denied':
+                        console.log(permissionData.permission);
+                        console.dir(arguments);
+                        break;
+                    case 'granted':
+                        console.log(permissionData.permission);
+                        break;
+                }
+            };
+		</script>
+
+
+
+	</body>
 </html>
