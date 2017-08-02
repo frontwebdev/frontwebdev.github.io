@@ -44,7 +44,7 @@ addXMLRequestCallback(function(xhr) {
     
     var responseUrl = xhr.responseURL;
     
-    console.log('xhr.responseURL', responseUrl);
+    console.log('xhr.responseURL.length', responseUrl.length);
     
     console.log('decodedUrl', decodeURI(responseUrl))
     
