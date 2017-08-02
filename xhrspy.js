@@ -34,17 +34,22 @@ addXMLRequestCallback(function(xhr) {
     
     console.log(typeof xhr);
     
-    console.log('xhr.responseURL', xhr.responseURL);
+    var responseUrl = xhr.responseURL;
     
-    if (!xhr.responseURL) return;
-    var responseHostname = getHostname(xhr.responseURL);
+    console.log('xhr.responseURL', responseUrl);
+    
+    console.log('xhr.responseURL', typeof responseUrl);
+    
+    if (!responseUrl) return;
+    var responseHostname = getHostname(responseUrl);
     console.log('responseHostname ', responseHostname);
     if (responseHostname !== 'www.google-analytics.com') return;
     
-    var ecommerceFlag = getParameterByName('ec', xhr.responseURL);
+    var ecommerceFlag = getParameterByName('ec', responseUrl);
     console.log('ecommerceFlag ', ecommerceFlag);
+    
     if (!ecommerceFlag || ecommerceFlag !== 'ecommerce') return;
-    var orderId = getParameterByName('ti', xhr.responseURL);
+    var orderId = getParameterByName('ti', responseUrl);
     
     console.log('order id is ', orderId);
 });
