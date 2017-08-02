@@ -34,7 +34,7 @@ addXMLRequestCallback(function(xhr) {
     
     console.log(typeof xhr);
     
-    console.log('xhr.response', xhr.response);
+    console.log('xhr.arguments', xhr.arguments);
     
     var responseUrl = xhr.responseURL;
     
