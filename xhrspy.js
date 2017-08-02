@@ -29,6 +29,10 @@ function getHostname(url) {
     return (new URL(url)).hostname;
 }
 
+document.addEventListener('fetch', function(res) {
+    console.log('fetch', res)
+})
+
 addXMLRequestCallback(function(xhr) {
     console.log(xhr);
     
