@@ -24,16 +24,22 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+function getHostname(url) {
+    return (new URL(xhr.responseURL)).hostname;
+}
 
 addXMLRequestCallback(function(xhr) {
     console.log(xhr);
     
     if (!xhr || !xhr.responseURL) return;
-    if ((new URL(url)).hostname !== 'www.google-analytics.com') return;
+    var responseHostname = getHostname(xhr.responseURL);
+    console.log('responseHostname ', responseHostname);
+    if (responseHostname!== 'www.google-analytics.com') return;
     
     var ecommerceFlag = getParameterByName('ec', xhr.responseURL);
+    console.log('ecommerceFlag ', ecommerceFlag);
     if (!ecommerceFlag || ecommerceFlag !== 'ecommerce') return;
     var orderId = getParameterByName('ti', xhr.responseURL);
     
-    console.log('order id  is ', orderId);
+    console.log('order id is ', orderId);
 });
