@@ -35,7 +35,7 @@ addXMLRequestCallback(function(xhr) {
     if (!xhr || !xhr.responseURL) return;
     var responseHostname = getHostname(xhr.responseURL);
     console.log('responseHostname ', responseHostname);
-    if (responseHostname!== 'www.google-analytics.com') return;
+    if (responseHostname !== 'www.google-analytics.com') return;
     
     var ecommerceFlag = getParameterByName('ec', xhr.responseURL);
     console.log('ecommerceFlag ', ecommerceFlag);
