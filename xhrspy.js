@@ -34,32 +34,27 @@ addXMLRequestCallback(function(xhr) {
     
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr.responseURL);
+    
+            var responseUrl = xhr.responseURL;
+
+            console.log('xhr.responseURL', responseUrl);
+
+            console.log('decodedUrl', decodeURI(responseUrl))
+
+            console.log('xhr.responseURL', typeof responseUrl);
+
+            if (!responseUrl) return;
+            var responseHostname = getHostname(responseUrl);
+            console.log('responseHostname ', responseHostname);
+            if (responseHostname !== 'www.google-analytics.com') return;
+
+            var ecommerceFlag = getParameterByName('ec', responseUrl);
+            console.log('ecommerceFlag ', ecommerceFlag);
+
+            if (!ecommerceFlag || ecommerceFlag !== 'ecommerce') return;
+            var orderId = getParameterByName('ti', responseUrl);
+
+            console.log('order id is ', orderId);
         }
     }
-    
-    console.log(typeof xhr);
-    
-    console.log('xhr.arguments', xhr.arguments);
-    
-    var responseUrl = xhr.responseURL;
-    
-    console.log('xhr.responseURL.length', responseUrl.length);
-    
-    console.log('decodedUrl', decodeURI(responseUrl))
-    
-    console.log('xhr.responseURL', typeof responseUrl);
-    
-    if (!responseUrl) return;
-    var responseHostname = getHostname(responseUrl);
-    console.log('responseHostname ', responseHostname);
-    if (responseHostname !== 'www.google-analytics.com') return;
-    
-    var ecommerceFlag = getParameterByName('ec', responseUrl);
-    console.log('ecommerceFlag ', ecommerceFlag);
-    
-    if (!ecommerceFlag || ecommerceFlag !== 'ecommerce') return;
-    var orderId = getParameterByName('ti', responseUrl);
-    
-    console.log('order id is ', orderId);
 });
