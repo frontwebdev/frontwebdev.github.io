@@ -33,6 +33,7 @@ addXMLRequestCallback(function(xhr) {
     console.log(xhr);
     
     xhr.onreadystatechange = function() {
+        console.log(xhr.readyState)
         if (xhr.readyState == XMLHttpRequest.DONE) {
     
             var responseUrl = xhr.responseURL;
