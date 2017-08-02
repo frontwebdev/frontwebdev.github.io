@@ -10,7 +10,6 @@ function addXMLRequestCallback(callback) {
         XMLHttpRequest.prototype.send = function() {
             for (i = 0; i < XMLHttpRequest.callbacks.length; i++) {
                 XMLHttpRequest.callbacks[i](this);
-                console.log(this);
             }
             oldSend.apply(this, arguments);
         }
