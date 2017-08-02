@@ -40,6 +40,8 @@ addXMLRequestCallback(function(xhr) {
     
     console.log('xhr.responseURL', responseUrl);
     
+    console.log('decodedUrl', decodeURI(responseUrl))
+    
     console.log('xhr.responseURL', typeof responseUrl);
     
     if (!responseUrl) return;
