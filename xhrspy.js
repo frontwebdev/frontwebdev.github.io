@@ -31,7 +31,7 @@ function getHostname(url) {
 
 addXMLRequestCallback(function(xhr) {
     console.log(xhr);
-    
+    console.log(xhr.responseURL);
     if (!xhr || !xhr.responseURL) return;
     var responseHostname = getHostname(xhr.responseURL);
     console.log('responseHostname ', responseHostname);
