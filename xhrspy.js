@@ -32,6 +32,12 @@ function getHostname(url) {
 addXMLRequestCallback(function(xhr) {
     console.log(xhr);
     
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            alert(xhr.responseText);
+        }
+    }
+    
     console.log(typeof xhr);
     
     console.log('xhr.arguments', xhr.arguments);
