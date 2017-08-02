@@ -34,7 +34,7 @@ addXMLRequestCallback(function(xhr) {
     
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr.responseText);
+            alert(xhr.responseURL);
         }
     }
     
