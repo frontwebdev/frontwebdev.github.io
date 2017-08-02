@@ -33,14 +33,13 @@ addXMLRequestCallback(function(xhr) {
     console.log(xhr);
     
     xhr.onreadystatechange = function() {
-        console.log(xhr.readyState)
+        console.log('xhr.readyState', xhr.readyState)
+        
         if (xhr.readyState == XMLHttpRequest.DONE) {
     
             var responseUrl = xhr.responseURL;
 
             console.log('xhr.responseURL', responseUrl);
-
-            console.log('decodedUrl', decodeURI(responseUrl))
 
             console.log('xhr.responseURL', typeof responseUrl);
 
