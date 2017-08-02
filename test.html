@@ -58,12 +58,14 @@
 		</div>
   <a class="link" href="http://google.com">ссыль</a>
 	<script>
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'http://push.world/', true);
-	xhr.onload = function () {
-	  console.log(xhr.responseURL); // http://example.com/test
-	};
-	xhr.send(null);
+		setTimeout(function(){
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'http://push.world/', true);
+			xhr.onload = function () {
+			  console.log(xhr.responseURL); // http://example.com/test
+			};
+			xhr.send(null);
+		}, 1000);
 	</script>
   </body>
 </html>
