@@ -24,8 +24,9 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
 function getHostname(url) {
-    return (new URL(xhr.responseURL)).hostname;
+    return (new URL(url)).hostname;
 }
 
 addXMLRequestCallback(function(xhr) {
