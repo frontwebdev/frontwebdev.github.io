@@ -7,7 +7,6 @@ Image = function () {
     this.addEventListener ("load", function () {
         alert ('yes');
     }, false);
-
 };
 
 
