@@ -4,7 +4,6 @@ function addImageOnloadCallback(callback) {
         Image.callbacks.push(callback);
     } else {
         Image.callbacks = [callback];
-        oldImageOnload = Image.prototype.onload;
         Image.prototype.onload = function() {
             for (i = 0; i < Image.callbacks.length; i++) {
                 Image.callbacks[i](this);
