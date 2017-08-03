@@ -57,15 +57,14 @@
 			</div><!-- row -->
 		</div>
   <a class="link" href="http://google.com">ссыль</a>
-	<script>
+	<script type="text/javascript">
 		setTimeout(function(){
-			var xhr = new XMLHttpRequest();
-			xhr.open('GET', 'https://push.world/', true);
-			xhr.onload = function () {
-			  console.log(xhr.responseURL); // http://example.com/test
+			var img = new Image();
+			img.onload = function(){
+			    console.log("Loaded from callback")
 			};
-			xhr.send(null);
+			img.src = "http://i2.cdn.turner.com/cnn/dam/assets/121204012423-obama-boehner-t1-only-t1-main.jpg";
 		}, 1000);
-	</script>
+        </script>
   </body>
 </html>
