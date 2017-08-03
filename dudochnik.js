@@ -16,4 +16,5 @@ function addImageOnloadCallback(callback) {
 
 addImageOnloadCallback(function(res) {
   console.log('image onload', res);
-})
+});
+
