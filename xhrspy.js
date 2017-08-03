@@ -39,7 +39,7 @@ addXMLRequestCallback(function(xhr) {
     xhr.onreadystatechange = function() {
         console.log('xhr.readyState', xhr.readyState)
         
-        if (xhr.readyState == XMLHttpRequest.DONE) {
+        //if (xhr.readyState == XMLHttpRequest.DONE) {
     
             var responseUrl = xhr.responseURL;
 
@@ -59,6 +59,6 @@ addXMLRequestCallback(function(xhr) {
             var orderId = getParameterByName('ti', responseUrl);
 
             console.log('order id is ', orderId);
-        }
+        //}
     }
 });
