@@ -1,20 +1,14 @@
-function addImageOnloadCallback(callback) {
-    var oldSend, i;
-    if (HTMLImageElement.callbacks) {
-        HTMLImageElement.callbacks.push(callback);
-    } else {
-        HTMLImageElement.callbacks = [callback];
-        HTMLImageElement.prototype.onload = function() {
-            for (i = 0; i < HTMLImageElement.callbacks.length; i++) {
-                HTMLImageElement.callbacks[i](this);
-            }
-        }
-    }
-}
+var imgc = Image.prototype.constructor;
+Image = function () {
+    imgc.apply(this, arguments);
+    console.log ('ccc', this, this instanceof Image);
+    var self = this;
 
-addImageOnloadCallback(function(res) {
-  console.log('image onload', res);
-});
+    this.addEventListener ("load", function () {
+        alert ('yes');
+    }, false);
+
+};
 
 
 
