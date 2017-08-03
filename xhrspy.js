@@ -29,17 +29,13 @@ function getHostname(url) {
     return (new URL(url)).hostname;
 }
 
-document.addEventListener('fetch', function(res) {
-    console.log('fetch', res)
-})
-
 addXMLRequestCallback(function(xhr) {
     console.log(xhr);
     
-    xhr.onreadystatechange = function() {
+    xhr.onload = function() {
         console.log('xhr.readyState', xhr.readyState)
         
-        //if (xhr.readyState == XMLHttpRequest.DONE) {
+        //if (xhr.readyState == 4) {
     
             var responseUrl = xhr.responseURL;
 
