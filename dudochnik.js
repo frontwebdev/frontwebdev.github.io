@@ -13,7 +13,15 @@ function addImageOnloadCallback(callback) {
     }
 }
 
-addImageOnloadCallback(function(res) {
-  console.log('image onload', res);
-});
+//addImageOnloadCallback(function(res) {
+  //console.log('image onload', res);
+//});
 
+
+Object.defineProperty(HTMLImageElement.prototype, 'onload', {
+  configurable: true,
+  enumerable: true,
+  value: function () {
+    console.log(this, "loaded");
+  }
+});
