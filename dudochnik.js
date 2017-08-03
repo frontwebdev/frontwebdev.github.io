@@ -17,6 +17,7 @@ addImageOnloadCallback(function(res) {
 });
 
 
+
 //Object.defineProperty(HTMLImageElement.prototype, 'onload', {
   //configurable: true,
   //enumerable: true,
