@@ -56,3 +56,9 @@ Object.defineProperty(FakeImage, 'toString', {
 });
 
 Image = FakeImage;
+
+document.createElement = function(tagName) {
+    if(tagName == "img") return new Image();
+    return temp.call(this, tagName);
+};
+
