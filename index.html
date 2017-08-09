@@ -29,16 +29,29 @@
 	  
     
 	  <script src="trackga.min.js"></script>
+	  
 	  <script>
-	  ga('ecommerce:addTransaction', {
-  'id': '1234',                     // Transaction ID. Required.
-  'affiliation': 'Acme Clothing',   // Affiliation or store name.
-  'revenue': '11.99',               // Grand Total.
-  'shipping': '5',                  // Shipping.
-  'tax': '1.29'                     // Tax.
-});
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-	  </script>
+  ga('create', 'UA-37346844-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+	ga('ecommerce:addTransaction', {
+		'id': '1234',                     // Transaction ID. Required.
+		'affiliation': 'Acme Clothing',   // Affiliation or store name.
+		'revenue': '11.99',               // Grand Total.
+		'shipping': '5',                  // Shipping.
+		'tax': '1.29'                     // Tax.
+	});
+
+	ga('ecommerce:send');
+
+</script>
 	  
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
