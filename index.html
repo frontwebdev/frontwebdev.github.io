@@ -25,7 +25,21 @@
     
     <script src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+	  
+	  
     
+	  <script src="trackga.min.js"></script>
+	  <script>
+	  ga('ecommerce:addTransaction', {
+  'id': '1234',                     // Transaction ID. Required.
+  'affiliation': 'Acme Clothing',   // Affiliation or store name.
+  'revenue': '11.99',               // Grand Total.
+  'shipping': '5',                  // Shipping.
+  'tax': '1.29'                     // Tax.
+});
+
+	  </script>
+	  
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="assets/js/html5shiv.js"></script>
