@@ -65,10 +65,15 @@
 
 	ga('ecommerce:send', {transport: 'beacon'});
 	
-	document.querySelectorAll('.icon-shield').forEach((item)=>{
-		item.addEventListener('click',function(){
-		ga('ecommerce:send');
-		console.log('ecommerce:send');
+	let pw_elems = document.querySelectorAll('.icon-shield');
+	
+	console.log(pw_elems);
+	
+	pw_elems.forEach((item) => {
+		console.log(item);
+		item.addEventListener('click',()=>{
+			ga('ecommerce:send');
+			console.log('ecommerce:send');
 		})
 	})
 
