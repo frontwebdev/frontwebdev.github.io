@@ -548,9 +548,17 @@
 		pw_elems.forEach((item) => {
 			console.log(item);
 			item.addEventListener('click',()=>{
+				ga('ecommerce:addTransaction', {
+				  'id': '77777',
+				  'affiliation': 'Acme Clothing',
+				  'revenue': '11.99',
+				  'shipping': '5',
+				  'tax': '1.29',
+				  'currency': 'EUR'  // local currency code.
+				});
 				ga('ecommerce:send');
 				console.log('ecommerce:send');
-			})
+			});
 		});
 	}, false);
   </script>
