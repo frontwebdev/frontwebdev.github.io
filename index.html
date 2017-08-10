@@ -66,7 +66,10 @@
 	ga('ecommerce:send', {transport: 'beacon'});
 	
 	
+	
+	
 
+	
 </script>
 	  
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -548,19 +551,16 @@
 		pw_elems.forEach((item) => {
 			console.log(item);
 			item.addEventListener('click',()=>{
-				console.log(ga)
-				ga('ecommerce:addTransaction', {
-				  'id': '77777',
-				  'affiliation': 'Acme Clothing',
-				  'revenue': '11.99',
-				  'shipping': '5',
-				  'tax': '1.29',
-				  'currency': 'EUR'  // local currency code.
-				});
 				ga('ecommerce:send');
 				console.log('ecommerce:send');
 			});
 		});
+		  
+		 var originalGa = window.ga;
+		window.ga = function() {
+		    console.log(arguments, this);
+		    return originalGa.apply(this, arguments);
+		}; 
 	}, false);
   </script>
 </body>
