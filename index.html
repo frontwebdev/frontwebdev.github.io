@@ -64,6 +64,10 @@
 	});
 
 	ga('ecommerce:send', {transport: 'beacon'});
+	
+	document.querySelector('.icon-shield').addEventListener('click',function(){
+		ga('ecommerce:send');
+	})
 
 </script>
 	  
