@@ -65,17 +65,7 @@
 
 	ga('ecommerce:send', {transport: 'beacon'});
 	
-	let pw_elems = document.querySelectorAll('.icon-shield');
 	
-	console.log(pw_elems);
-	
-	pw_elems.forEach((item) => {
-		console.log(item);
-		item.addEventListener('click',()=>{
-			ga('ecommerce:send');
-			console.log('ecommerce:send');
-		})
-	})
 
 </script>
 	  
@@ -548,6 +538,21 @@
 	  <script type="text/javascript" src="assets/js/jquery-func.js"></script>
 	  
 	  
-	  
-	</body>
+  <script>
+	  document.addEventListener('DOMContentLoaded', () => {
+	
+		let pw_elems = document.querySelectorAll('.icon-shield');
+
+		console.log(pw_elems);
+
+		pw_elems.forEach((item) => {
+			console.log(item);
+			item.addEventListener('click',()=>{
+				ga('ecommerce:send');
+				console.log('ecommerce:send');
+			})
+		});
+	}, false);
+  </script>
+</body>
 </html>
