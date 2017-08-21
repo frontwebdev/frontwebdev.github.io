@@ -29,7 +29,7 @@
     !function (e, t) {
         r.abandoned = function (e, t) {
             var r = {}, i = ["childList", "attributes", "characterData", "subtree"], s = function () {
-                return JSON.parse('{"name":"wer","nodeParent":"#basketWrap","nodeChild":".product-count-label","typeChange":"contentCount","host":"wer.ru","emptyCartValue":"0","orderSuccessPath":"order/make/index.php?ORDER_ID=","propsObserver":["childList","subtree"],"scriptVersion":1}')
+                return JSON.parse('{"name":"wer","nodeParent":"#basketWrap","nodeChild":".basket-box-price","typeChange":"contentCount","host":"wer.ru","emptyCartValue":"0","orderSuccessPath":"order/make/index.php?ORDER_ID=","propsObserver":["childList","subtree"],"scriptVersion":1}')
             }, o = function () {
                 function r(e) {
                     n(this, r), this.propsObserver = e.observer, this.cart = e.cart(), this.cacheData = {}, this.init()
@@ -173,5 +173,6 @@
             }, r
         }(e, t), 
             r.abandoned.init()
+        
     }(window, document)
 }]);
