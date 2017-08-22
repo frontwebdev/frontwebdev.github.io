@@ -1,38 +1,38 @@
-!function (e) {
-    function t(a) {
+!function (t) {
+    function e(a) {
         if (n[a]) return n[a].exports;
         var r = n[a] = {exports: {}, id: a, loaded: !1};
-        return e[a].call(r.exports, r, r.exports, t), r.loaded = !0, r.exports
+        return t[a].call(r.exports, r, r.exports, e), r.loaded = !0, r.exports
     }
 
     var n = {};
-    t.m = e, t.c = n, t.p = "", t(0)
-}([function (e, t) {
+    e.m = t, e.c = n, e.p = "", e(0)
+}([function (t, e) {
     "use strict";
 
-    function n(e, t) {
-        if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function")
+    function n(t, e) {
+        if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function")
     }
 
     var a = function () {
-        function e(e, t) {
-            for (var n = 0; n < t.length; n++) {
-                var a = t[n];
-                a.enumerable = a.enumerable || !1, a.configurable = !0, "value" in a && (a.writable = !0), Object.defineProperty(e, a.key, a)
+        function t(t, e) {
+            for (var n = 0; n < e.length; n++) {
+                var a = e[n];
+                a.enumerable = a.enumerable || !1, a.configurable = !0, "value" in a && (a.writable = !0), Object.defineProperty(t, a.key, a)
             }
         }
 
-        return function (t, n, a) {
-            return n && e(t.prototype, n), a && e(t, a), t
+        return function (e, n, a) {
+            return n && t(e.prototype, n), a && t(e, a), e
         }
     }(), r = window.pw || {};
-    !function (e, t) {
-        r.abandoned = function (e, t) {
+    !function (t, e) {
+        r.abandoned = function (t, e) {
             var r = {}, i = ["childList", "attributes", "characterData", "subtree"], s = function () {
-                return JSON.parse('{"name":"wer","nodeParent":"#basketWrap","nodeChild":".basket-box-price","typeChange":"contentCount","host":"wer.ru","emptyCartValue":"0","orderSuccessPath":"order/make/index.php?ORDER_ID=","propsObserver":["childList","subtree"],"scriptVersion":1}')
+                return JSON.parse('{"name":"newbeautyboxru","nodeParent":".bx_cart_counter","typeChange":"contentCount","host":"newbeautybox.ru","emptyCartValue":"0","orderSuccessPath":"personal/order/payment/","propsObserver":["childList","subtree"],"scriptVersion":1}')
             }, o = function () {
-                function r(e) {
-                    n(this, r), this.propsObserver = e.observer, this.cart = e.cart(), this.cacheData = {}, this.init()
+                function r(t) {
+                    n(this, r), this.propsObserver = t.observer, this.cart = t.cart(), this.cacheData = {}, this.init()
                 }
 
                 return a(r, [{
@@ -41,87 +41,87 @@
                     }
                 }, {
                     key: "initState", value: function () {
-                        var e = this.cart, n = t.querySelector(e.nodeParent);
-                        n && this.isHost(e.host) && this.switchChange(n, e)
+                        var t = this.cart, n = e.querySelector(t.nodeParent);
+                        n && this.isHost(t.host) && this.switchChange(n, t)
                     }
                 }, {
-                    key: "replaceStrReg", value: function (e) {
-                        var t = ["?", "/", "#", "="], n = e;
-                        return t.forEach(function (e) {
-                            n = n.replace(e, "\\" + e)
+                    key: "replaceStrReg", value: function (t) {
+                        var e = ["?", "/", "#", "="], n = t;
+                        return e.forEach(function (t) {
+                            n = n.replace(t, "\\" + t)
                         }), n
                     }
                 }, {
-                    key: "isHost", value: function (e) {
-                        return t.location.host === e
+                    key: "isHost", value: function (t) {
+                        return e.location.host === t
                     }
                 }, {
-                    key: "domObserver", value: function (e, t, n) {
+                    key: "domObserver", value: function (t, e, n) {
                         var a = function () {
-                            n(e)
+                            n(t)
                         };
                         if (this.isMutationObserver) {
                             var r = new MutationObserver(a);
-                            r.disconnect(), r.observe(e, t), this.observer = r
+                            r.disconnect(), r.observe(t, e), this.observer = r
                         }
                     }
                 }, {
                     key: "disconnect", value: function () {
-                        var e = this;
-                        t.addEventListener(btoa("pw:abandoned:disconnect"), function (t) {
-                            t.detail && e.observer && e.observer.disconnect()
+                        var t = this;
+                        e.addEventListener(btoa("pw:abandoned:disconnect"), function (e) {
+                            e.detail && t.observer && t.observer.disconnect()
                         })
                     }
                 }, {
-                    key: "customEvents", value: function (e, n) {
-                        var a = new CustomEvent(e, {bubbles: !0, target: t, detail: n});
-                        t.dispatchEvent(a)
+                    key: "customEvents", value: function (t, n) {
+                        var a = new CustomEvent(t, {bubbles: !0, target: e, detail: n});
+                        e.dispatchEvent(a)
                     }
                 }, {
-                    key: "itemPropsObserver", value: function (e) {
-                        var t = this.propsObserver, n = {};
-                        return e.forEach(function (e) {
-                            n[e] = 0 != ~t.indexOf(e)
+                    key: "itemPropsObserver", value: function (t) {
+                        var e = this.propsObserver, n = {};
+                        return t.forEach(function (t) {
+                            n[t] = 0 != ~e.indexOf(t)
                         }), n
                     }
                 }, {
                     key: "domChangeState", value: function () {
-                        var e = this, n = this.cart;
+                        var t = this, n = this.cart;
                         if (n) {
-                            var a = t.querySelector(n.nodeParent), r = this.itemPropsObserver(n.propsObserver);
-                            a && this.isHost(n.host) && this.domObserver(a, r, function (t) {
-                                e.switchChange(t, n)
+                            var a = e.querySelector(n.nodeParent), r = this.itemPropsObserver(n.propsObserver);
+                            a && this.isHost(n.host) && this.domObserver(a, r, function (e) {
+                                t.switchChange(e, n)
                             })
                         }
                     }
                 }, {
-                    key: "switchChange", value: function (e, t) {
-                        switch (t.typeChange) {
+                    key: "switchChange", value: function (t, e) {
+                        switch (e.typeChange) {
                             case"contentCount":
-                                this.domChangeContentCount(e, t);
+                                this.domChangeContentCount(t, e);
                                 break;
                             case"contentNode":
-                                this.domChangeContentNode(e, t);
+                                this.domChangeContentNode(t, e);
                                 break;
                             case"attributes":
-                                this.domChangeAttributes(e, t)
+                                this.domChangeAttributes(t, e)
                         }
                     }
                 }, {
-                    key: "domChangeContentCount", value: function (e, t) {
-                        var n = e.innerHTML, a = void 0, r = void 0;
-                        if (t.nodeChild) {
-                            var i = this.parseDOMelements(n), s = i.querySelector(t.nodeChild);
-                            a = this.cleaningDataParsing(s.innerHTML), r = parseFloat(t.emptyCartValue)
-                        } else a = this.cleaningDataParsing(n), r = parseFloat(t.emptyCartValue);
+                    key: "domChangeContentCount", value: function (t, e) {
+                        var n = t.innerHTML, a = void 0, r = void 0;
+                        if (e.nodeChild) {
+                            var i = this.parseDOMelements(n), s = i.querySelector(e.nodeChild);
+                            a = this.cleaningDataParsing(s.innerHTML), r = parseFloat(e.emptyCartValue)
+                        } else a = this.cleaningDataParsing(n), r = parseFloat(e.emptyCartValue);
                         if (!1 !== a) {
                             var o = this.getDataCart(a > r, a);
                             this.sendData(o)
                         }
                     }
                 }, {
-                    key: "domChangeContentNode", value: function (e, t) {
-                        var n = e.innerHTML, a = (t.emptyCartValue, new RegExp("" + t.emptyCartValue, "gi")),
+                    key: "domChangeContentNode", value: function (t, e) {
+                        var n = t.innerHTML, a = (e.emptyCartValue, new RegExp("" + e.emptyCartValue, "gi")),
                             r = a.test(n) ? 0 : parseFloat(n);
                         if (!1 !== r) {
                             var i = this.getDataCart(a.test(n), r);
@@ -129,33 +129,33 @@
                         }
                     }
                 }, {
-                    key: "sendData", value: function (e) {
-                        e.cart_items !== this.cacheData.cart_items && (this.customEvents(btoa("pw:abandoned:cart"), e), this.cacheData = e)
+                    key: "sendData", value: function (t) {
+                        t.cart_items !== this.cacheData.cart_items && (this.customEvents(btoa("pw:abandoned:cart"), t), this.cacheData = t)
                     }
                 }, {
-                    key: "cleaningDataParsing", value: function (e) {
-                        return !!e && parseFloat(e.replace(/\(|\)/gi, ""))
+                    key: "cleaningDataParsing", value: function (t) {
+                        return !!t && parseFloat(t.replace(/\(|\)/gi, ""))
                     }
                 }, {
-                    key: "getDataCart", value: function (e, t) {
-                        return e ? {cart_is_empty: !1, cart_items: t, event_id: "cart_state"} : {
+                    key: "getDataCart", value: function (t, e) {
+                        return t ? {cart_is_empty: !1, cart_items: e, event_id: "cart_state"} : {
                             cart_is_empty: !0,
-                            cart_items: t,
+                            cart_items: e,
                             event_id: "cart_state"
                         }
                     }
                 }, {
-                    key: "parseDOMelements", value: function (e) {
-                        return (new DOMParser).parseFromString(e, "text/html")
+                    key: "parseDOMelements", value: function (t) {
+                        return (new DOMParser).parseFromString(t, "text/html")
                     }
                 }, {
                     key: "domChangeAttributes", value: function () {
                     }
                 }, {
                     key: "isOrderSuccess", get: function () {
-                        var e = this.cart, n = t.location.href,
-                            a = new RegExp("" + this.replaceStrReg(e.orderSuccessPath), "gi");
-                        if (!e.orderSuccessPath) return !1;
+                        var t = this.cart, n = e.location.href,
+                            a = new RegExp("" + this.replaceStrReg(t.orderSuccessPath), "gi");
+                        if (!t.orderSuccessPath) return !1;
                         var r = !!~n.search(a);
                         return r && this.customEvents(btoa("pw:abandoned:cart"), {
                             event_id: "cart_state",
@@ -164,14 +164,14 @@
                     }
                 }, {
                     key: "isMutationObserver", get: function () {
-                        return e.MutationObserver || e.WebKitMutationObserver || e.MozMutationObserver
+                        return t.MutationObserver || t.WebKitMutationObserver || t.MozMutationObserver
                     }
                 }]), r
             }();
             return r.init = function () {
                 return new o({observer: i, cart: s})
             }, r
-        }(e, t), 
+        }(t, e), 
             r.abandoned.init()
         
     }(window, document)
