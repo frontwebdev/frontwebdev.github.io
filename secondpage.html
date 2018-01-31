@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    html,body{
+      width:100%;height:100%;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-block;
+      width: 100px;
+      height: 30px;
+    }
+    
+  </style>
+  
+</head>
+<body>
+	
+  
+	<script type="text/javascript">
+  let dataObj = {
+    auth: {
+        expired_at: "2018-01-31 13:52:39",
+        got_at: 1517403159284,
+        refresh_expired_at: "2018-02-14 12:52:39",
+        refresh_ttl: 1209600,
+        token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vZGV2LmFwaS5iYXJiZXJzaG9wLnNlcnZpY2VzL2FwaS9sb2dpbi9nb29nbGUvY2FsbGJhY2siLCJpYXQiOjE1MTc0MDMxNTksImV4cCI6MTUxNzQwNjc1OSwibmJmIjoxNTE3NDAzMTU5LCJqdGkiOiJLb2NOUmpvTWhvVlYwdkg2Iiwic3ViIjoxMjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.SYlKL8OvKUCSA_Q2_JGJZ1CWz8S1_KOCcKqe2E9q4x8"
+    },
+
+    user: {
+        name: 'John Doe',
+        email: "joghdoe@gmail.com",
+        avatar: "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=50",
+        updated_at: "2018-01-31 12:52:39",
+        created_at: "2018-01-31 12:52:39",
+    }
+};
+  
+  function init() {
+    let channel = new MessageChannel();
+    window.document.postMessage('grw-init', *, [channel.port2]);
+    channel.port1.onmessage = this.handleMessage;
+  }
+  
+  function handleMessage(e) {
+		if (e.data && typeof e.data.command === 'string') {
+          switch (e.data) {
+              case 'grw-get-auth':
+               e.ports[0].postMessage({command: 'grw-auth', data: dataObj});
+              break;
+          }
+      } 
+   } 
+      document.addEventListener('DOMContentLoaded', () => {
+        init();
+      })
+        </script>
+  </body>
+</html>
