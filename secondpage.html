@@ -50,7 +50,7 @@
   
   function init() {
     let channel = new MessageChannel();
-    window.document.postMessage('grw-init', *, [channel.port2]);
+    window.document.postMessage('grw-init', `*`, [channel.port2]);
     channel.port1.onmessage = this.handleMessage;
   }
   
